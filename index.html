@@ -296,7 +296,7 @@ header{
 .price-block{
   margin-top:1rem;
   background:var(--steel-900);border:1px solid var(--steel-700);
-  display:grid;grid-template-columns:1fr auto;align-items:stretch;
+  display:grid;grid-template-columns:auto 1fr auto;align-items:stretch;
   overflow:hidden;
 }
 .price-was{
@@ -304,10 +304,16 @@ header{
 }
 .price-was .label{font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;color:var(--steel-400);text-transform:uppercase}
 .price-was .val{
-  font-family:var(--display);font-weight:700;font-size:1.6rem;color:var(--steel-300);
+  font-family:var(--display);font-weight:900;font-size:clamp(1.9rem,3.2vw,2.5rem);color:var(--coffey-green);
+  line-height:1.05;white-space:nowrap;
   text-decoration:line-through;text-decoration-color:var(--flash-red);text-decoration-thickness:3px;
 }
-.price-was .save{font-family:var(--mono);font-size:.72rem;color:var(--hazard-yellow);font-weight:600;letter-spacing:.08em}
+.price-save{
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:1.1rem 1rem;
+  border-left:1px dashed var(--steel-700);
+}
+.price-save .save{font-family:var(--mono);font-size:.8rem;color:var(--hazard-yellow);font-weight:600;letter-spacing:.08em}
 .price-now{
   background:linear-gradient(135deg,var(--coffey-green),var(--coffey-green-deep));
   color:var(--steel-950);padding:1.1rem 1.8rem;
@@ -379,6 +385,7 @@ footer{
 }
 @media(max-width:560px){
   .price-block{grid-template-columns:1fr}
+  .price-save{border-left:none;border-top:1px dashed var(--steel-700);justify-content:flex-start;text-align:left;padding:.8rem 1.4rem}
   .price-now{clip-path:none;align-items:flex-start;min-width:0}
   .utility-inner{justify-content:center;gap:1rem;flex-wrap:wrap}
 }
@@ -543,6 +550,8 @@ footer{
         <div class="price-was">
           <span class="label">New in 2026</span>
           <span class="val">$115,000</span>
+        </div>
+        <div class="price-save">
           <span class="save">YOU SAVE $40,000 (35%)</span>
         </div>
         <div class="price-now">
@@ -617,6 +626,8 @@ footer{
         <div class="price-was">
           <span class="label">Status</span>
           <span class="val" style="text-decoration:none;font-size:1.15rem;color:var(--paper-dim)">Ready to run, ready to ship</span>
+        </div>
+        <div class="price-save">
           <span class="save">FLASH SALE — PRICED TO CLEAR</span>
         </div>
         <div class="price-now">
@@ -688,6 +699,8 @@ footer{
         <div class="price-was">
           <span class="label">New in 2026</span>
           <span class="val">$41,895</span>
+        </div>
+        <div class="price-save">
           <span class="save">YOU SAVE $14,595 (35%)</span>
         </div>
         <div class="price-now">
